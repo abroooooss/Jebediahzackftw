@@ -11,8 +11,6 @@ local Main = library:Window("Main")
 local BossFarm = library:Window("Boss Farm")
 BossFarm:Label("Attach To")
 local Boss = BossFarm:Dropdown("Bosses", {"Kakyoin", "Johnny", "Jotaro OH", "Dio", "Off"}, function(name)
-
-
     if name == "Kakyoin" then
         _G.Kakyoin = true
         while _G.Kakyoin == true do
@@ -102,5 +100,16 @@ while true do
 game.Workspace.Npcs:FindFirstChild("Avdol lvl 75+").Done:FireServer()
 game.Workspace.Npcs:FindFirstChild("Avdol lvl 75+").QuestDone:FireServer()
 wait(.1)
+end
+end)
+Main:Button("All Items TP", function()
+for i,g in pairs(game.workspace.Items:GetDescendants()) do
+    if g:IsA("MeshPart") and g.Name == "Handle" then
+        local CFrameEnd = g.CFrame 
+local Time = 3 -- will change to speed later
+local tween =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd})
+tween:Play()
+tween.Completed:Wait()
+    end
 end
 end)
