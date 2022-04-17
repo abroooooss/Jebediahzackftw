@@ -8,37 +8,12 @@ local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/miroe
 library:Keybind("P")
 local Main = library:Window("Main")
 local Kakyoin = library:Window("Kakyoin")
-local Lairs = library:Window("Lairs")
-local Jotaro = library:Window("Jotaro")
 Main:Button("Stand Storage", function()
    for i,g in pairs(game.workspace.Npcs:GetDescendants()) do
        if g.Name == "Crystal Necklace 1.0 Silver" then
            g.Parent.Done:FireServer()
        end
 end
-end)
-Jotaro:Button("Attach On", function()
-   _G.jotaro = true
-   while _G.jotaro == true do
-       game.Players.LocalPlayer.Character.Stand.HumanoidRootPart.CFrame = game.Workspace.Living:FindFirstChild("Jotaro Over Heaven").HumanoidRootPart.CFrame + game.Workspace.Living:FindFirstChild("Jotaro Over Heaven").HumanoidRootPart.CFrame.LookVector * -5
-       wait(.1)
-   end
-end)
-Jotaro:Button("Attach Off", function()
-   _G.jotaro = false
-end)
-Lairs:Button("LVL 100 Lair", function()
-   game.Workspace.Npcs:FindFirstChild("i_stabman lvl 100 lair").Done:FireServer()
-end)
-Lairs:Button("Attach Boss", function()
-   _G.boss = true
-   while _G.boss == true do
-       game.Players.LocalPlayer.Character.Stand.HumanoidRootPart.CFrame = game.Workspace.Living:FindFirstChild("Boss").HumanoidRootPart.CFrame + game.Workspace.Living:FindFirstChild("Boss").HumanoidRootPart.CFrame.LookVector * -5
-       wait(.1)
-   end
-end)
-Lairs:Button("Unattach Boss", function()
-   _G.boss = false
 end)
 Kakyoin:Button("Autofarm On", function()
    _G.kakyoin = true
