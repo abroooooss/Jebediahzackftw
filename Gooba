@@ -7,6 +7,59 @@ end)
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/miroeramaa/TurtleLib/main/TurtleUiLib.lua"))()
 library:Keybind("P")
 local Main = library:Window("Main")
+local BossFarm = library:Window("Boss Farm")
+BossFarm:Label("Attach To")
+local Boss = BossFarm:Dropdown("Bosses", {"Kakyoin", "Johnny", "Jotaro OH", "Off"}, function(name)
+    if name == "Kakyoin" then
+        _G.Kakyoin = true
+        while _G.Kakyoin == true do
+            game.Players.LocalPlayer.Character.Stand.HumanoidRootPart.CFrame = game.Workspace.Living:FindFirstChild("Kakyoin").HumanoidRootPart.CFrame + game.Workspace.Living:FindFirstChild("Kakyoin").HumanoidRootPart.CFrame.LookVector * -5
+            wait(.1)
+   end
+    else if name == "Johnny" then
+ _G.Johnny= true
+        while _G.Johnny == true do
+            game.Players.LocalPlayer.Character.Stand.HumanoidRootPart.CFrame = game.Workspace.Living:FindFirstChild("JohnnyJoestar").HumanoidRootPart.CFrame + game.Workspace.Living:FindFirstChild("JohnnyJoestar").HumanoidRootPart.CFrame.LookVector * -5
+            wait(.1)
+   end
+else if name == "Jotaro OH" then
+ _G.JotaroOH = true
+        while _G.JotaroOH == true do
+            game.Players.LocalPlayer.Character.Stand.HumanoidRootPart.CFrame = game.Workspace.Living:FindFirstChild("Jotaro Over Heaven").HumanoidRootPart.CFrame + game.Workspace.Living:FindFirstChild("Jotaro Over Heaven").HumanoidRootPart.CFrame.LookVector * -5
+            wait(.1)
+   end
+    else if name == "Off" then
+        _G.Kakyoin = false
+        _G.Johnny = false
+        _G.JotaroOH = false
+    end
+    end    
+    end
+    end
+end)
+BossFarm:Label("Auto Attack")
+local ATK = BossFarm:Dropdown("Attacking", {"On", "Off"}, function(name)
+    if name == "On" then
+              wait(1)
+local blength = game.Players.LocalPlayer.PlayerGui.PlayerGUI.ingame.Stats.BarrageValues.TextLabel.Text
+_G.kakatk = true
+   while _G.kakatk == true do
+    keypress(0x45)
+    wait(blength + 0.5)
+    keyrelease(0x45)
+    game.Players.LocalPlayer.Character.StandEvents.Splash:FireServer()
+    wait(4)
+    for count = 1, 65 do
+        game.Players.LocalPlayer.Character.StandEvents.M1:FireServer()
+        wait(.2)
+    end
+    wait(1)
+    end
+    else if name == "Off" then
+        _G.kakatk = false
+    end    
+    end
+end)
 Main:Button("Stand Storage", function()
    for i,g in pairs(game.workspace.Npcs:GetDescendants()) do
        if g.Name == "Crystal Necklace 1.0 Silver" then
