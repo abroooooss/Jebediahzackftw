@@ -7,43 +7,12 @@ end)
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/miroeramaa/TurtleLib/main/TurtleUiLib.lua"))()
 library:Keybind("P")
 local Main = library:Window("Main")
-local Kakyoin = library:Window("Kakyoin")
 Main:Button("Stand Storage", function()
    for i,g in pairs(game.workspace.Npcs:GetDescendants()) do
        if g.Name == "Crystal Necklace 1.0 Silver" then
            g.Parent.Done:FireServer()
        end
 end
-end)
-Kakyoin:Button("Autofarm On", function()
-   _G.kakyoin = true
-   while _G.kakyoin == true do
-       game.Players.LocalPlayer.Character.Stand.HumanoidRootPart.CFrame = game.Workspace.Living.Kakyoin.HumanoidRootPart.CFrame + game.Workspace.Living.Kakyoin.HumanoidRootPart.CFrame.LookVector * -5
-       wait(.1)
-   end
-end)
-Kakyoin:Button("Autofarm Off", function()
-      _G.kakyoin = false
-end)
-Kakyoin:Button("Autofarm ATK On", function()
-      wait(1)
-local blength = game.Players.LocalPlayer.PlayerGui.PlayerGUI.ingame.Stats.BarrageValues.TextLabel.Text
-_G.kakatk = true
-   while _G.kakatk == true do
-    keypress(0x45)
-    wait(blength + 0.5)
-    keyrelease(0x45)
-    game.Players.LocalPlayer.Character.StandEvents.Splash:FireServer()
-    wait(4)
-    for count = 1, 65 do
-        game.Players.LocalPlayer.Character.StandEvents.M1:FireServer()
-        wait(.2)
-    end
-    wait(1)
-    end
-end)
-Kakyoin:Button("Autofarm ATK Off", function()
-      _G.kakatk = false
 end)
 Main:Button("Quick Arrow", function()
    local tool = game.Players.LocalPlayer.Backpack:FindFirstChild("Stand Arrow")
