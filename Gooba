@@ -63,24 +63,6 @@ Main:Button("Quick Rokakaka", function()
    wait(.5)
    game.Players.LocalPlayer.Character:FindFirstChild("Rokakaka").Use:FireServer()
 end)
-Main:Button("INF ATK", function()
-wait(1)
-local blength = game.Players.LocalPlayer.PlayerGui.PlayerGUI.ingame.Stats.BarrageValues.TextLabel.Text
-_G.infatk = true
-   while _G.infatk == true do
-    keypress(0x45)
-    wait(blength + 0.5)
-    keyrelease(0x45)
-    for count = 1, 65 do
-        game.Players.LocalPlayer.Character.StandEvents.M1:FireServer()
-        wait(.2)
-    end
-    wait(1)
-    end
-end)
-Main:Button("INF ATK Off", function()
-_G.infatk = false 
-end)
 Main:Button("INF Avdol Quest", function()
 while true do
 game.Workspace.Npcs:FindFirstChild("Avdol lvl 75+").Done:FireServer()
