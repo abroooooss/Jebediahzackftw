@@ -96,8 +96,8 @@ Main:Button("Quick Rokakaka", function()
    game.Players.LocalPlayer.Character:FindFirstChild("Rokakaka").Use:FireServer()
 end)
 Main:Button("INF Avdol Quest", function()
-   for i,g in pairs(game.workspace.Npcs:GetDescendants()) do
-       if g:IsA("MeshPart") and g.Name == "Handle" then
+   for i,k in pairs(game.workspace.Npcs:GetDescendants()) do
+       if k:IsA("MeshPart") and k.Name == "6" then
            while true do
                g.Parent.Done:FireServer()
                g.Parent.QuestDone:FireServer()
