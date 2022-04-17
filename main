@@ -2,13 +2,7 @@ local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/miroe
 library:Keybind("P")
 local BossFarm = library:Window("Boss Farm")
 BossFarm:Label("Attach To")
-local Boss = BossFarm:Dropdown("Bosses", {"Kakyoin", "Johnny", "Jotaro OH", "Dio" "Off"}, function(name)
-    if name == "Dio Over Heaven" then
-_G.Dio = true
-while _G.Dio == true do
-game.Players.LocalPlayer.Character.Stand.HumanoidRootPart.CFrame = game.Workspace.Living:FindFirstChild("Dio Over Heaven").HumanoidRootPart.CFrame + game.Workspace.Living:FindFirstChild("Kakyoin").HumanoidRootPart.CFrame.LookVector * -5
-            wait(.1)
-   end
+local Boss = BossFarm:Dropdown("Bosses", {"Kakyoin", "Johnny", "Jotaro OH", "Off"}, function(name)
     if name == "Kakyoin" then
         _G.Kakyoin = true
         while _G.Kakyoin == true do
@@ -31,7 +25,6 @@ else if name == "Jotaro OH" then
         _G.Kakyoin = false
         _G.Johnny = false
         _G.JotaroOH = false
-        _G.Dio = fakse
     end
     end    
     end
