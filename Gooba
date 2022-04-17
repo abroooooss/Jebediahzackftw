@@ -99,8 +99,8 @@ Main:Button("INF Avdol Quest", function()
    for i,k in pairs(game.workspace.Npcs:GetDescendants()) do
        if k:IsA("MeshPart") and k.Name == "6" then
            while true do
-               g.Parent.Done:FireServer()
-               g.Parent.QuestDone:FireServer()
+               k.Parent.Done:FireServer()
+               k.Parent.QuestDone:FireServer()
                wait(0.1)
         end
        end
