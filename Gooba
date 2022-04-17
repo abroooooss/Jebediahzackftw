@@ -4,6 +4,7 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
    wait(1)
    vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 end)
+game.Workspace.Map.Model:FindFirstChild("Picnic bench"):Destroy()
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/miroeramaa/TurtleLib/main/TurtleUiLib.lua"))()
 local items = {"Rokakaka", "Stand Arrow", "Stone Mask", "Green Baby", "Kar's Mask", "Charged Arrow", "Requiem Arrow"}
 library:Keybind("RightControl")
